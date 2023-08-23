@@ -62,12 +62,13 @@ class Page2 extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    int timerState = ref.watch(appSessionServiceProvider);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: const Text('Page 2'),
       ),
-      body: const Center(child: Text('Logged in, log out in')),
+      body: Center(child: Text('Logged in, log out in ${(10 - timerState)}')),
     );
   }
 }
