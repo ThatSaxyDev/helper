@@ -45,7 +45,10 @@ class Page1 extends ConsumerWidget {
       body: Center(
         child: ElevatedButton(
             onPressed: () {
+              //! start the session timer
               ref.read(appSessionServiceProvider.notifier).countTime();
+
+              //! flip the auth state (loggedinprovider)
               ref.read(loggedInProvider.notifier).update((state) => true);
             },
             child: const Text('Log in')),
